@@ -81,19 +81,27 @@ body .il { color: #0000FF } /* Literal.Number.Integer.Long */
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
-<span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="c1"># df.csv</span>
+<span class="c1"># a,b,c,d</span>
+<span class="c1"># 1,2,3,4</span>
+<span class="c1"># 5,6,7,8</span>
+<span class="c1"># 9,8,7,6</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="c1"># df.json</span>
+<span class="c1"># {&quot;a&quot;:{&quot;0&quot;:1,&quot;1&quot;:5,&quot;2&quot;:9},&quot;b&quot;:{&quot;0&quot;:2,&quot;1&quot;:6,&quot;2&quot;:8},</span>
+<span class="c1">#  &quot;c&quot;:{&quot;0&quot;:3,&quot;1&quot;:7,&quot;2&quot;:7},&quot;d&quot;:{&quot;0&quot;:4,&quot;1&quot;:8,&quot;2&quot;:6}}</span>
 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;df.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;df.json&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="c1">#    a  b  c  d</span>
 <span class="c1"># 0  1  2  3  4</span>
 <span class="c1"># 1  5  6  7  8</span>
 <span class="c1"># 2  9  8  7  6</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;df.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;df.json&#39;</span><span class="p">)</span>
 </pre></div>
 </body>
 </html>

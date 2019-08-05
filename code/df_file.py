@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Creating a dataframe from a dict."""
+"""Creating a dataframe from a csv or json."""
 
 import pandas as pd
 
